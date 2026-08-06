@@ -1058,12 +1058,43 @@ display:flex;
 
 justify-content:center;
 
-gap:10px;
+align-items:center;
 
-margin-top:25px;
+gap:8px;
+
+margin-top:30px;
+
+font-size:20px;
+
+font-weight:600;
+
+letter-spacing:2px;
 
 }
 
+#currentSlideNumber{
+
+font-size:34px;
+
+color:#ff4d8d;
+
+text-shadow:
+
+0 0 15px rgba(255,77,141,.6);
+
+}
+
+#totalSlideNumber{
+
+opacity:.6;
+
+}
+
+.separator{
+
+opacity:.5;
+
+}
 .memory-indicator .dot{
 
 width:12px;
