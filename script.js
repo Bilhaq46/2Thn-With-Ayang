@@ -672,3 +672,109 @@ imageViewer.classList.remove("show");
 }
 
 });
+
+/* ==========================================================
+                SCRIPT.JS PART 4
+      CONFETTI • CINEMATIC • PATCH UPDATE
+========================================================== */
+
+/* ===========================================
+MEMORY SLIDER PATCH
+=========================================== */
+
+// Pastikan jumlah slide sesuai
+if (typeof totalSlideNumber !== "undefined" && totalSlideNumber) {
+    totalSlideNumber.textContent = String(memoryPhotos.length).padStart(2, "0");
+}
+
+/* ===========================================
+PROGRESS BAR MEMORY
+=========================================== */
+
+const progressBar = document.getElementById("memoryProgress");
+
+function updateProgress(){
+
+    if(!progressBar || memoryPhotos.length===0) return;
+
+    const percent=((currentSlide+1)/memoryPhotos.length)*100;
+
+    progressBar.style.width=percent+"%";
+
+}
+
+/* update progress ketika slide berubah */
+
+const oldShowSlide=showSlide;
+
+showSlide=function(index){
+
+    oldShowSlide(index);
+
+    updateProgress();
+
+};
+
+updateProgress();
+
+/* ===========================================
+CONFETTI
+=========================================== */
+
+const finalButton=document.getElementById("finalButton");
+
+if(finalButton){
+
+finalButton.addEventListener("click",()=>{
+
+if(typeof confetti==="function"){
+
+confetti({
+
+particleCount:180,
+
+spread:90,
+
+origin:{y:0.6}
+
+});
+
+}
+
+});
+
+}
+
+/* ===========================================
+CINEMATIC END
+=========================================== */
+
+const cinematic=document.getElementById("cinematicEnd");
+
+if(finalButton){
+
+finalButton.addEventListener("click",()=>{
+
+setTimeout(()=>{
+
+if(cinematic){
+
+cinematic.classList.add("show");
+
+}
+
+},1200);
+
+});
+
+}
+
+/* ===========================================
+AUTO CLOSE CINEMATIC
+=========================================== */
+
+if(cinematic){
+
+cinematic.addEventListener("click",()=>{
+
+cinematic
