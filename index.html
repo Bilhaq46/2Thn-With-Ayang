@@ -1,40 +1,737 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rafly ❤️ Shinta</title>
-  <link rel="stylesheet" href="style.css" />
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy 2nd Anniversary ❤️ Shinta</title>
+
+<meta name="description" content="A Special Gift For Shinta">
+
+<link rel="icon" href="assets/icon/favicon.png">
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+<!-- AOS -->
+<link
+href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-<div class="hero">
-  <h1>Rafly ❤️ Shinta</h1>
-  <p>Happy 2nd Anniversary</p>
-  <button id="startBtn">Open Our Story ❤️</button>
+<!-- ================================= -->
+<!-- LOADER -->
+<!-- ================================= -->
+
+<div id="loader">
+
+<div class="loader-heart">
+
+<i class="fa-solid fa-heart"></i>
+
 </div>
 
-<section id="nextSection" style="display:none">
-  <h2>Our Journey</h2>
+<h2>Loading Our Memories...</h2>
 
-  <div class="counter">
-    <div><span id="days">0</span><br/>Hari</div>
-    <div><span id="hours">0</span><br/>Jam</div>
-    <div><span id="minutes">0</span><br/>Menit</div>
-    <div><span id="seconds">0</span><br/>Detik</div>
-  </div>
+</div>
 
-  <h2>📸 Our Memories</h2>
-  <img id="slide" src="assets/photos/1.jpg" alt="memory" />
-  <p id="caption">Awal dari semua cerita kita ❤️</p>
+<!-- ================================= -->
+<!-- PARTICLES -->
+<!-- ================================= -->
+
+<div id="particles"></div>
+
+<div id="hearts-container"></div>
+
+<div id="sparkle-container"></div>
+
+<!-- ================================= -->
+<!-- INTRO -->
+<!-- ================================= -->
+
+<section id="intro">
+
+<div class="intro-content">
+
+<p class="intro-small">
+
+Hai Shinta...
+
+</p>
+
+<h1>
+
+Aku punya sesuatu...
+
+</h1>
+
+<h2>
+
+Khusus untuk kamu ❤️
+
+</h2>
+
+<button id="startBtn">
+
+Buka Hadiah
+
+</button>
+
+</div>
+
 </section>
 
-<button id="musicBtn">🎵</button>
+<!-- ================================= -->
+<!-- GIFT -->
+<!-- ================================= -->
 
-<audio id="bgMusic" loop preload="auto">
-  <source src="assets/music/lagu.mp3" type="audio/mpeg" />
+<section id="giftSection">
+
+<div class="gift-wrapper">
+
+<div class="gift-box" id="giftBox">
+
+<div class="gift-top"></div>
+
+<div class="gift-body"></div>
+
+<div class="gift-ribbon"></div>
+
+</div>
+
+<p>
+
+Klik Kadonya ❤️
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- HERO -->
+<!-- ================================= -->
+
+<header id="hero">
+
+<div class="overlay"></div>
+
+<div class="hero-content" data-aos="zoom-in">
+
+<h3>
+
+Happy
+
+</h3>
+
+<h1>
+
+2nd Anniversary
+
+</h1>
+
+<h2>
+
+Shinta ❤️
+
+</h2>
+
+<p>
+
+24 Agustus
+
+</p>
+
+<a href="#counter" class="btn-love">
+
+Mulai Cerita Kita
+
+</a>
+
+</div>
+
+</header>
+
+<!-- ================================= -->
+<!-- COUNTER -->
+<!-- ================================= -->
+
+<section id="counter">
+
+<div class="container">
+
+<h2 data-aos="fade-up">
+
+Sudah Bersama Selama...
+
+</h2>
+
+<div class="counter-box">
+
+<div>
+
+<h1 id="days">
+
+000
+
+</h1>
+
+<span>Hari</span>
+
+</div>
+
+<div>
+
+<h1 id="hours">
+
+00
+
+</h1>
+
+<span>Jam</span>
+
+</div>
+
+<div>
+
+<h1 id="minutes">
+
+00
+
+</h1>
+
+<span>Menit</span>
+
+</div>
+
+<div>
+
+<h1 id="seconds">
+
+00
+
+</h1>
+
+<span>Detik</span>
+
+</div>
+
+</div>
+
+<p class="counter-text">
+
+Setiap detik yang aku lewati bersamamu selalu menjadi kenangan yang sangat berharga.
+
+Terima kasih sudah menemani perjalanan ini.
+
+❤️
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- SLIDESHOW -->
+<!-- ================================= -->
+
+<section id="slideshow">
+
+<h2 data-aos="fade-up">
+
+Our Beautiful Memories
+
+</h2>
+
+<div class="slider">
+
+<img id="slideImage"
+
+src="assets/photos/1.jpg"
+
+alt="Memory">
+
+<div class="slide-overlay">
+
+<h3 id="slideTitle">
+
+Awal Semua Cerita
+
+</h3>
+
+<p id="slideCaption">
+
+Semua berawal dari sebuah pertemuan sederhana yang akhirnya mengubah hidupku.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="slider-control">
+
+<button id="prevSlide">
+
+<i class="fa-solid fa-chevron-left"></i>
+
+</button>
+
+<button id="nextSlide">
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- LOVE LETTER -->
+<!-- ================================= -->
+
+<section id="letter">
+
+<div class="container">
+
+<h2 data-aos="fade-up">
+
+Untuk Shinta ❤️
+
+</h2>
+
+<div class="letter-card">
+
+<p id="typingText"></p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- TIMELINE -->
+<!-- ================================= -->
+
+<section id="timeline">
+
+<div class="container">
+
+<h2 data-aos="fade-up">
+
+Perjalanan Kita ❤️
+
+</h2>
+
+<div class="timeline">
+
+<div class="timeline-item left" data-aos="fade-right">
+
+<div class="timeline-content">
+
+<h3>Awal Pertemuan</h3>
+
+<p>
+Semua berawal dari sebuah pertemuan sederhana.
+Siapa sangka, dari pertemuan itu aku menemukan seseorang
+yang mampu membuat hari-hariku terasa lebih indah.
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item right" data-aos="fade-left">
+
+<div class="timeline-content">
+
+<h3>Mulai Dekat</h3>
+
+<p>
+Obrolan yang awalnya biasa berubah menjadi kebiasaan.
+Sedikit demi sedikit aku mulai nyaman,
+dan tanpa sadar kamu menjadi bagian penting dalam hidupku.
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item left" data-aos="fade-right">
+
+<div class="timeline-content">
+
+<h3>24 Agustus</h3>
+
+<p>
+Hari dimana perjalanan kita resmi dimulai.
+Hari yang akan selalu menjadi tanggal favoritku,
+karena di hari itulah aku bisa memanggilmu
+sebagai seseorang yang sangat spesial di hidupku.
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item right" data-aos="fade-left">
+
+<div class="timeline-content">
+
+<h3>Dua Tahun Bersama</h3>
+
+<p>
+Tidak semuanya selalu mudah,
+tetapi kita berhasil melewati semuanya bersama.
+Terima kasih karena selalu bertahan,
+tetap menggenggam tanganku,
+dan tidak menyerah pada hubungan ini.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- GALLERY -->
+<!-- ================================= -->
+
+<section id="gallery">
+
+<div class="container">
+
+<h2 data-aos="fade-up">
+
+26 Kenangan Terindah
+
+</h2>
+
+<div class="gallery-grid">
+
+<img src="assets/photos/1.jpg" class="gallery-item">
+<img src="assets/photos/2.jpg" class="gallery-item">
+<img src="assets/photos/3.jpg" class="gallery-item">
+<img src="assets/photos/4.jpg" class="gallery-item">
+<img src="assets/photos/5.jpg" class="gallery-item">
+<img src="assets/photos/6.jpg" class="gallery-item">
+<img src="assets/photos/7.jpg" class="gallery-item">
+<img src="assets/photos/8.jpg" class="gallery-item">
+<img src="assets/photos/9.jpg" class="gallery-item">
+<img src="assets/photos/10.jpg" class="gallery-item">
+<img src="assets/photos/11.jpg" class="gallery-item">
+<img src="assets/photos/12.jpg" class="gallery-item">
+<img src="assets/photos/13.jpg" class="gallery-item">
+<img src="assets/photos/14.jpg" class="gallery-item">
+<img src="assets/photos/15.jpg" class="gallery-item">
+<img src="assets/photos/16.jpg" class="gallery-item">
+<img src="assets/photos/17.jpg" class="gallery-item">
+<img src="assets/photos/18.jpg" class="gallery-item">
+<img src="assets/photos/19.jpg" class="gallery-item">
+<img src="assets/photos/20.jpg" class="gallery-item">
+<img src="assets/photos/21.jpg" class="gallery-item">
+<img src="assets/photos/22.jpg" class="gallery-item">
+<img src="assets/photos/23.jpg" class="gallery-item">
+<img src="assets/photos/24.jpg" class="gallery-item">
+<img src="assets/photos/25.jpg" class="gallery-item">
+<img src="assets/photos/26.jpg" class="gallery-item">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- QUOTES -->
+<!-- ================================= -->
+
+<section id="quotes">
+
+<div class="container">
+
+<h2>
+
+A Few Words For You
+
+</h2>
+
+<div class="quote-box">
+
+<p id="quoteText">
+
+"Aku bersyukur dipertemukan denganmu."
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- MUSIC -->
+<!-- ================================= -->
+
+<section id="music">
+
+<div class="container">
+
+<h2>
+
+Our Song 🎵
+
+</h2>
+
+<div class="music-player">
+
+<button id="playMusic">
+
+<i class="fa-solid fa-play"></i>
+
+</button>
+
+<input
+type="range"
+id="musicProgress"
+value="0"
+min="0"
+max="100">
+
+<span id="musicTime">
+
+00:00
+
+</span>
+
+</div>
+
+<audio id="bgMusic">
+
+<source src="assets/music/music.mp3" type="audio/mpeg">
+
 </audio>
 
+</div>
+
+</section>  
+
+<!-- ================================= -->
+<!-- SPECIAL MESSAGE -->
+<!-- ================================= -->
+
+<section id="special-message">
+
+<div class="container">
+
+<h2 data-aos="fade-up">
+
+A Little Message ❤️
+
+</h2>
+
+<div class="special-card" data-aos="zoom-in">
+
+<p>
+
+Terima kasih sudah hadir dalam hidupku.
+
+Terima kasih sudah menjadi rumah ketika dunia terasa melelahkan.
+
+Terima kasih sudah bertahan sejauh ini.
+
+Semoga setelah dua tahun ini, kita masih memiliki banyak tanggal 24 Agustus lainnya yang bisa kita rayakan bersama.
+
+Aku akan terus berusaha menjadi seseorang yang pantas untuk kamu banggakan.
+
+Aku sayang kamu, Shinta.
+
+❤️
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- ENDING -->
+<!-- ================================= -->
+
+<section id="ending">
+
+<div class="ending-content">
+
+<h1>
+
+Happy 2nd Anniversary
+
+</h1>
+
+<h2>
+
+Shinta ❤️
+
+</h2>
+
+<p>
+
+24 Agustus
+
+</p>
+
+<button id="loveButton">
+
+I Love You ❤️
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- SECRET POPUP -->
+<!-- ================================= -->
+
+<div id="secretPopup">
+
+<div class="popup-card">
+
+<h2>
+
+Kamu Menemukannya ❤️
+
+</h2>
+
+<p>
+
+Kalau kamu membaca pesan ini...
+
+berarti kamu benar-benar menjelajahi semua hadiah kecil yang aku buat.
+
+Terima kasih sudah meluangkan waktumu.
+
+Aku berharap hadiah sederhana ini bisa membuatmu tersenyum.
+
+Happy Anniversary, Shinta.
+
+Aku sayang kamu.
+
+Selalu.
+
+❤️
+
+</p>
+
+<button id="closePopup">
+
+Tutup
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ================================= -->
+<!-- IMAGE VIEWER -->
+<!-- ================================= -->
+
+<div id="imageViewer">
+
+<span id="closeViewer">
+
+&times;
+
+</span>
+
+<img id="viewerImage" src="">
+
+</div>
+
+<!-- ================================= -->
+<!-- CONFETTI -->
+<!-- ================================= -->
+
+<div id="confetti-container"></div>
+
+<!-- ================================= -->
+<!-- FOOTER -->
+<!-- ================================= -->
+
+<footer>
+
+<p>
+
+Made with ❤️ by Rafly
+
+<br>
+
+Happy 2nd Anniversary Shinta
+
+</p>
+
+</footer>
+
+<!-- ================================= -->
+<!-- AUDIO CLICK -->
+<!-- ================================= -->
+
+<audio id="clickSound">
+
+<source src="assets/music/click.mp3" type="audio/mpeg">
+
+</audio>
+
+<!-- ================================= -->
+<!-- AOS -->
+<!-- ================================= -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+
+duration:1200,
+
+once:true
+
+});
+
+</script>
+
+<!-- ================================= -->
+<!-- SCRIPT -->
+<!-- ================================= -->
+
 <script src="script.js"></script>
+
 </body>
-</html>
+</html>  
