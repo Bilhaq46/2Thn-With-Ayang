@@ -778,3 +778,181 @@ if(cinematic){
 cinematic.addEventListener("click",()=>{
 
 cinematic
+
+/* ==========================================================
+                SCRIPT.JS PART 5 (PATCH)
+        BUG FIX • MUSIC • NOTES • SLIDER
+========================================================== */
+
+/* ===========================================
+LOVE NOTES PATCH
+=========================================== */
+
+// Hentikan interval lama jika ada
+if(window.noteInterval){
+    clearInterval(window.noteInterval);
+}
+
+function updateLoveNote(){
+
+    if(!noteText) return;
+
+    noteText.style.transition="opacity .5s";
+
+    noteText.style.opacity="0";
+
+    setTimeout(()=>{
+
+        noteText.innerHTML=notes[noteIndex];
+
+        noteIndex++;
+
+        if(noteIndex>=notes.length){
+
+            noteIndex=0;
+
+        }
+
+        noteText.style.opacity="1";
+
+    },500);
+
+}
+
+window.noteInterval=setInterval(updateLoveNote,5000);
+
+/* ===========================================
+MUSIC PATCH
+=========================================== */
+
+function updateMusicIcon(){
+
+    if(!musicToggle) return;
+
+    if(bgMusic.paused){
+
+        musicToggle.innerHTML='<i class="fa-solid fa-play"></i>';
+
+        musicToggle.classList.remove("playing");
+
+    }else{
+
+        musicToggle.innerHTML='<i class="fa-solid fa-pause"></i>';
+
+        musicToggle.classList.add("playing");
+
+    }
+
+}
+
+bgMusic.addEventListener("play",updateMusicIcon);
+
+bgMusic.addEventListener("pause",updateMusicIcon);
+
+updateMusicIcon();
+
+/* ===========================================
+MEMORY SLIDER PATCH
+=========================================== */
+
+function safeShowSlide(index){
+
+    if(memoryPhotos.length===0) return;
+
+    if(index>=memoryPhotos.length){
+
+        currentSlide=0;
+
+    }
+
+    if(index<0){
+
+        currentSlide=memoryPhotos.length-1;
+
+    }
+
+    memoryPhotos.forEach(photo=>{
+
+        photo.style.display="none";
+
+    });
+
+    memoryPhotos[currentSlide].style.display="block";
+
+    if(memoryCaption){
+
+        memoryCaption.innerHTML=captions[currentSlide];
+
+    }
+
+    if(currentSlideNumber){
+
+        currentSlideNumber.textContent=
+        String(currentSlide+1).padStart(2,"0");
+
+    }
+
+    if(progressBar){
+
+        progressBar.style.width=
+        ((currentSlide+1)/memoryPhotos.length)*100+"%";
+
+    }
+
+}
+
+/* Ganti fungsi lama */
+
+showSlide=safeShowSlide;
+
+showSlide(currentSlide);
+
+/* ===========================================
+PLAYLIST PATCH
+=========================================== */
+
+if(playlistPlay){
+
+playlistPlay.addEventListener("click",()=>{
+
+setTimeout(updateMusicIcon,100);
+
+});
+
+}
+
+/* ===========================================
+POPUP PATCH
+=========================================== */
+
+if(lovePopup){
+
+document.addEventListener("keydown",(e)=>{
+
+if(e.key==="Escape"){
+
+lovePopup.classList.remove("show");
+
+}
+
+});
+
+}
+
+/* ===========================================
+PRELOAD IMAGE
+=========================================== */
+
+memoryPhotos.forEach(img=>{
+
+const image=new Image();
+
+image.src=img.src;
+
+});
+
+/* ===========================================
+PATCH COMPLETE
+=========================================== */
+
+console.log("Patch Part 5 Loaded ❤️");                           
