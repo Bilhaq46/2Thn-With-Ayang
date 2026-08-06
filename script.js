@@ -956,3 +956,174 @@ PATCH COMPLETE
 =========================================== */
 
 console.log("Patch Part 5 Loaded ❤️");                           
+
+/* ==========================================================
+                SCRIPT.JS PART 6
+      TYPING EFFECT • QUOTES • CINEMATIC
+========================================================== */
+
+/* ===========================================
+TYPING EFFECT
+=========================================== */
+
+const typingText = document.getElementById("typingLetter");
+
+const fullLetter = typingText ? typingText.innerHTML : "";
+
+let typingIndex = 0;
+
+function startTyping(){
+
+    if(!typingText) return;
+
+    typingText.innerHTML = "";
+
+    typingIndex = 0;
+
+    const typing = setInterval(()=>{
+
+        typingText.innerHTML += fullLetter.charAt(typingIndex);
+
+        typingIndex++;
+
+        if(typingIndex >= fullLetter.length){
+
+            clearInterval(typing);
+
+        }
+
+    },30);
+
+}
+
+/* ===========================================
+AUTO START TYPING
+=========================================== */
+
+const letterSection=document.getElementById("letterSection");
+
+let typingStarted=false;
+
+window.addEventListener("scroll",()=>{
+
+    if(!letterSection || typingStarted) return;
+
+    const top=letterSection.getBoundingClientRect().top;
+
+    if(top<window.innerHeight-120){
+
+        typingStarted=true;
+
+        startTyping();
+
+    }
+
+});
+
+/* ===========================================
+LOVE QUOTES
+=========================================== */
+
+const quoteText=document.getElementById("quoteText");
+
+const quotes=[
+
+"Cinta bukan tentang menemukan seseorang yang sempurna, tetapi belajar mencintai dengan sempurna. ❤️",
+
+"Semoga setiap tahun kita selalu bersama.",
+
+"Terima kasih sudah hadir di hidupku.",
+
+"Kamu adalah hadiah terindah dari Tuhan.",
+
+"Aku akan tetap memilihmu setiap hari."
+
+];
+
+let quoteIndex=0;
+
+function changeQuote(){
+
+    if(!quoteText) return;
+
+    quoteText.style.opacity="0";
+
+    setTimeout(()=>{
+
+        quoteText.innerHTML=quotes[quoteIndex];
+
+        quoteIndex++;
+
+        if(quoteIndex>=quotes.length){
+
+            quoteIndex=0;
+
+        }
+
+        quoteText.style.opacity="1";
+
+    },400);
+
+}
+
+setInterval(changeQuote,7000);
+
+/* ===========================================
+CINEMATIC MESSAGE
+=========================================== */
+
+const endingMessage=document.getElementById("endingMessage");
+
+function showEnding(){
+
+    if(!endingMessage) return;
+
+    endingMessage.classList.add("show");
+
+}
+
+if(finalButton){
+
+    finalButton.addEventListener("click",()=>{
+
+        setTimeout(showEnding,2500);
+
+    });
+
+}
+
+/* ===========================================
+AUTO SCROLL EFFECT
+=========================================== */
+
+const sections=document.querySelectorAll("section");
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},{
+
+threshold:.15
+
+});
+
+sections.forEach(section=>{
+
+observer.observe(section);
+
+});
+
+/* ===========================================
+ENDING
+=========================================== */
+
+console.log("Script Part 6 Loaded ❤️");                           
