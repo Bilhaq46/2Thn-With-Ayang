@@ -2974,3 +2974,34 @@ Happy 2nd Anniversary
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 */
+/* MEMORY PROGRESS */
+
+.memory-progress{
+
+width:260px;
+
+height:5px;
+
+background:rgba(255,255,255,.15);
+
+margin:18px auto;
+
+border-radius:50px;
+
+overflow:hidden;
+
+}
+
+#memoryProgress{
+
+width:0%;
+
+height:100%;
+
+background:linear-gradient(90deg,#ff4d8d,#ff9fc4);
+
+transition:.45s;
+
+border-radius:50px;
+
+}
